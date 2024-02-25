@@ -472,7 +472,10 @@ const Orders = () => {
                 Завершенные продажи
               </h2>
 
-              <div className={Style.orders_tikets__orders}>
+              <div
+                style={{ marginBottom: "20px" }}
+                className={Style.orders_tikets__orders}
+              >
                 <OrdersFilter
                   filterSells={filterSells}
                   setFilterSells={setFilterSells}
