@@ -476,7 +476,7 @@ const Orders = () => {
               </h2>
 
               <div
-                style={{ marginBottom: "20px" }}
+                style={{ marginBottom: "20px", minHeight: "auto" }}
                 className={Style.orders_tikets__orders}
               >
                 <OrdersFilter
