@@ -148,9 +148,6 @@
 .orders_tikets__orders__table_item_o {
   color: #eef0f4;
 }
-.orders_tikets__orders__table_item_o:nth-child(1) {
-  width: 30%;
-}
 .orders_tikets__orders__table_item_o:nth-child(1) div {
   margin-left: 5px;
   font-weight: 400;
@@ -162,6 +159,35 @@
 }
 .orders_tikets__orders__table_item_o:nth-child(4) {
   position: relative;
+}
+.orders_tikets__orders__table_item_menu_modal {
+  padding: 0px 12px;
+  background-color: #3b4758;
+  margin-right: 8px;
+  position: absolute;
+  border-radius: var(--radius6);
+  width: 181px;
+  left: -181px;
+  z-index: 15;
+}
+.orders_tikets__orders__table_item_menu_modal ul {
+  list-style: none;
+}
+.orders_tikets__orders__table_item_menu_modal li {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 10px 0px;
+}
+.orders_tikets__orders__table_item_menu_modal img {
+  margin-right: 10px;
+}
+.orders_tikets__orders__table_item_menu_modal hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #586a84;
 }
 .orders_tikets__orders__table_item_status {
   width: 10px;
@@ -195,24 +221,18 @@
   border: 0;
 }
 .orders_tikets__orders__table_set {
-  width: 4px;
+  width: 15px;
   height: 20px;
 }
 .orders_tikets__orders__table_set div {
   background-color: #319dff;
   height: 4px;
   width: 4px;
+  margin: 0 auto;
   border-radius: 50%;
   margin-bottom: 4px;
 }
-.orders_tikets__orders__table_set div:nth-child(1) {
-  width: 100%;
-}
-.orders_tikets__orders__table_set div:nth-child(2) {
-  width: 100%;
-}
 .orders_tikets__orders__table_set div:nth-child(3) {
-  width: 100%;
   margin-bottom: 0;
 }
 .orders_tikets__orders__table_summ_m {

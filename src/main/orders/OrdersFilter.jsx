@@ -10,6 +10,7 @@ const OrdersFilter = ({
   setFilterSellsData,
   filterSellsData,
   isAll,
+  setOrders
 }) => {
   return (
     <>
@@ -302,6 +303,13 @@ const OrdersFilter = ({
             </div>
           )}
         </div>
+        {isAll && (
+          <button className={Style.orders_tikets__orders__table_set}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </button>
+        )}
       </div>
 
       {filterSellsData.status
@@ -318,6 +326,7 @@ const OrdersFilter = ({
                   setStatusModal={setFilterSellsData}
                   getRelativeTime={getRelativeTime}
                   isAll={isAll}
+                  setOrders={setOrders}
                 />
               )
           )
@@ -335,6 +344,7 @@ const OrdersFilter = ({
                   setStatusModal={setFilterSellsData}
                   getRelativeTime={getRelativeTime}
                   isAll={isAll}
+                  setOrders={setOrders}
                 />
               )
           )
@@ -352,6 +362,7 @@ const OrdersFilter = ({
                 setStatusModal={setFilterSellsData}
                 getRelativeTime={getRelativeTime}
                 isAll={isAll}
+                setOrders={setOrders}
               />
             ))
         : filterSellsData.summ === "Наибольшее"
@@ -368,6 +379,7 @@ const OrdersFilter = ({
                 setStatusModal={setFilterSellsData}
                 getRelativeTime={getRelativeTime}
                 isAll={isAll}
+                setOrders={setOrders}
               />
             ))
         : filterSellsData.idSort && filterSellsData.idSort === "Наименьшее"
@@ -384,6 +396,7 @@ const OrdersFilter = ({
                 setStatusModal={setFilterSellsData}
                 getRelativeTime={getRelativeTime}
                 isAll={isAll}
+                setOrders={setOrders}
               />
             ))
         : filterSellsData.idSort === "Наибольшее"
@@ -400,6 +413,7 @@ const OrdersFilter = ({
                 setStatusModal={setFilterSellsData}
                 getRelativeTime={getRelativeTime}
                 isAll={isAll}
+                setOrders={setOrders}
               />
             ))
         : orders.map((data, id) => (
@@ -413,6 +427,7 @@ const OrdersFilter = ({
               setStatusModal={setFilterSellsData}
               getRelativeTime={getRelativeTime}
               isAll={isAll}
+              setOrders={setOrders}
             />
           ))}
     </>

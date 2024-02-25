@@ -23,6 +23,7 @@ const Orders = () => {
     order: "",
     summ: "",
     id: 0,
+    modal: false,
   });
 
   const [filterSells, setFilterSells] = useState({
@@ -38,6 +39,7 @@ const Orders = () => {
     order: "",
     summ: "",
     id: 0,
+    modal: false,
   });
 
   const [filterAll, setFilterAll] = useState({
@@ -265,6 +267,7 @@ const Orders = () => {
               summs={summs}
               statuses={statuses}
               isAll={true}
+              setOrders={setOrders}
             />
           </div>
         </div>
@@ -485,6 +488,7 @@ const Orders = () => {
                   summs={summs}
                   statuses={statuses}
                   isAll={false}
+                  setOrders={setOrders}
                 />
               </div>
             </div>

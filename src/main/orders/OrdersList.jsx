@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from "react";
 import Style from "../../styles/main/orders/Orders.module.css";
 
 const OrdersList = ({
@@ -9,7 +10,28 @@ const OrdersList = ({
   getRelativeTime,
   nativeId,
   isAll,
+  setOrders,
 }) => {
+  const [modal, setModal] = useState(statusModal.modal);
+  const refButton = useRef(null);
+  const refModal = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        refModal.current &&
+        !refModal.current.contains(event.target) &&
+        refButton &&
+        !refButton.current.contains(event.target)
+      ) {
+        setModal((prev) => (prev = false));
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [refButton, modal, setModal]);
+
   return (
     <div className={Style.orders_tikets__orders__table}>
       <div className={Style.orders_tikets__orders__table_item_o}>
@@ -98,11 +120,85 @@ const OrdersList = ({
           )}
         </button>
       </div>
-      <button className={Style.orders_tikets__orders__table_set}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </button>
+      <div style={{ position: "relative" }}>
+        {isAll && (
+          <button
+            ref={refButton}
+            onClick={() => {
+              setModal((prev) => !prev);
+            }}
+            className={Style.orders_tikets__orders__table_set}
+          >
+            <div></div>
+            <div></div>
+            <div></div>
+          </button>
+        )}
+
+        {modal && (
+          <div
+            ref={refModal}
+            className={Style.orders_tikets__orders__table_item_menu_modal}
+          >
+            <ul>
+              <li
+                onClick={() => {
+                  setModal((prev) => !prev);
+                }}
+              >
+                <img src="../img/main/orders/modalTask.svg" alt="task" />
+                Создать задачу
+              </li>
+              <li
+                onClick={() => {
+                  setModal((prev) => !prev);
+                }}
+              >
+                <img src="../img/main/orders/modalPrice.svg" alt="price" />
+                Создать счет на оплату
+              </li>
+              <li
+                onClick={() => {
+                  setModal((prev) => !prev);
+                }}
+              >
+                <img src="../img/main/orders/modalDock.svg" alt="dock" />
+                Создать накладную
+              </li>
+              <li
+                onClick={() => {
+                  setModal((prev) => !prev);
+                }}
+              >
+                <img src="../img/main/orders/modalOrder.svg" alt="send order" />
+                Отправить заказ
+              </li>
+              <li
+                onClick={() => {
+                  setModal((prev) => !prev);
+                }}
+              >
+                <img src="../img/main/orders/modalPrint.svg" alt="send order" />
+                Распечатать
+              </li>
+              <hr />
+              <li
+                onClick={() => {
+                  orders.splice(id, 1);
+                  setOrders(prev => prev = [...orders]);
+                  setModal((prev) => !prev);
+                }}
+              >
+                <img
+                  src="../img/main/orders/modalDelite.svg"
+                  alt="send order"
+                />
+                Удалить заказ
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
