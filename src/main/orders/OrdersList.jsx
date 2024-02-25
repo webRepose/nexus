@@ -15,6 +15,28 @@ const OrdersList = ({
   const [modal, setModal] = useState(statusModal.modal);
   const refButton = useRef(null);
   const refModal = useRef(null);
+  const dataModal = [
+    {
+      title: "Создать задачу",
+      icon: "../img/main/orders/modalTask.svg",
+    },
+    {
+      title: "Создать счет на оплату",
+      icon: "../img/main/orders/modalPrice.svg",
+    },
+    {
+      title: "Создать накладную",
+      icon: "../img/main/orders/modalDock.svg",
+    },
+    {
+      title: "Отправить заказ",
+      icon: "../img/main/orders/modalOrder.svg",
+    },
+    {
+      title: "Распечатать",
+      icon: "../img/main/orders/modalPrint.svg",
+    },
+  ];
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -141,51 +163,23 @@ const OrdersList = ({
             className={Style.orders_tikets__orders__table_item_menu_modal}
           >
             <ul>
-              <li
-                onClick={() => {
-                  setModal((prev) => !prev);
-                }}
-              >
-                <img src="../img/main/orders/modalTask.svg" alt="task" />
-                Создать задачу
-              </li>
-              <li
-                onClick={() => {
-                  setModal((prev) => !prev);
-                }}
-              >
-                <img src="../img/main/orders/modalPrice.svg" alt="price" />
-                Создать счет на оплату
-              </li>
-              <li
-                onClick={() => {
-                  setModal((prev) => !prev);
-                }}
-              >
-                <img src="../img/main/orders/modalDock.svg" alt="dock" />
-                Создать накладную
-              </li>
-              <li
-                onClick={() => {
-                  setModal((prev) => !prev);
-                }}
-              >
-                <img src="../img/main/orders/modalOrder.svg" alt="send order" />
-                Отправить заказ
-              </li>
-              <li
-                onClick={() => {
-                  setModal((prev) => !prev);
-                }}
-              >
-                <img src="../img/main/orders/modalPrint.svg" alt="send order" />
-                Распечатать
-              </li>
+              {dataModal &&
+                dataModal.map((data, id) => (
+                  <li
+                  key={id}
+                    onClick={() => {
+                      setModal((prev) => !prev);
+                    }}
+                  >
+                    <img src={data.icon} alt="icon" />
+                    {data.title}
+                  </li>
+                ))}
               <hr />
               <li
                 onClick={() => {
                   orders.splice(id, 1);
-                  setOrders(prev => prev = [...orders]);
+                  setOrders((prev) => (prev = [...orders]));
                   setModal((prev) => !prev);
                 }}
               >

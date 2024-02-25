@@ -64,6 +64,24 @@
   .header_burger {
     display: block;
   }
+  .header_burger_active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header_burger_active div {
+    position: absolute;
+    margin: 0;
+  }
+  .header_burger_active div:nth-child(2) {
+    display: none;
+  }
+  .header_burger_active div:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  .header_burger_active div:nth-child(3) {
+    transform: rotate(-45deg);
+  }
   .header_settings_notify {
     margin-right: 12px;
   }
