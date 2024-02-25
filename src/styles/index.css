@@ -117,6 +117,10 @@ main {
     height: 90svh !important;
   }
 
+  .flow {
+    overflow: hidden;
+  }
+
   .aside_unset p {
     display: block !important;
   }

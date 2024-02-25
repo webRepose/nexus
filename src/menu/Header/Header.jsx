@@ -14,6 +14,7 @@ const Header = () => {
         onClick={() => {
           if (document.querySelector("aside")) {
             document.querySelector("aside").classList.toggle("aside_unset");
+            document.querySelector("body").classList.toggle("flow");
           }
         }}
         className={Style.header_burger}
