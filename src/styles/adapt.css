@@ -1,0 +1,15 @@
+html.dark {
+  --color-grey1: #eef0f4;
+  --bg-aside: #1d232c;
+  --bg-body: #161b21;
+  --bg-search: #3b4758;
+  --color-search: #bac4d1;
+}
+
+html.light {
+  --color-grey1: #eef0f4;
+  --bg-aside: #1d232c;
+  --bg-body: #161b21;
+  --bg-search: #3b4758;
+  --color-search: #bac4d1;
+}

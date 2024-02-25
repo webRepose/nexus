@@ -1,0 +1,40 @@
+.consumer {
+  width: 100%;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  border-radius: var(--radius12);
+  border: 1px solid #0077e4;
+  display: flex;
+  color: #eef0f4;
+  margin-top: 50px;
+
+  &_content {
+    display: flex;
+    margin: 0 auto;
+
+    img {
+      margin-right: 12px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .consumer {
+    &_content {
+      img {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 610px) {
+  .consumer {
+    &_content {
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+}

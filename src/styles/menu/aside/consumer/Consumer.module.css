@@ -1,0 +1,28 @@
+.consumer {
+  width: 100%;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  border-radius: var(--radius12);
+  border: 1px solid #0077e4;
+  display: flex;
+  color: #eef0f4;
+  margin-top: 50px;
+}
+.consumer_content {
+  display: flex;
+  margin: 0 auto;
+}
+.consumer_content img {
+  margin-right: 12px;
+}
+
+@media (max-width: 900px) {
+  .consumer_content img {
+    margin-right: 0;
+  }
+}
+@media (max-width: 610px) {
+  .consumer_content img {
+    margin-right: 10px;
+  }
+}/*# sourceMappingURL=Consumer.module.css.map */

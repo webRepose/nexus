@@ -1,0 +1,40 @@
+.aside {
+  background-color: var(--bg-aside);
+  height: calc(100svh - 40px);
+  position: fixed;
+  width: 224px;
+  border-radius: var(--radius12);
+  padding: 16px;
+  overflow-x: auto;
+  z-index: 100;
+
+  &_logo {
+    display: block;
+  }
+}
+
+@media (max-width: 1280px) {
+  .aside {
+    padding: 16px 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .aside {
+    width: auto;
+
+    p {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 610px) {
+  .aside {
+    display: none;
+
+    &_logo {
+      display: none;
+    }
+  }
+}

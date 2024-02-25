@@ -1,0 +1,74 @@
+.ui_switch {
+  margin-right: 14px;
+  display: flex;
+  align-items: center;
+  --switch-bg: #586a84;
+  --switch-width: 72px;
+  --switch-height: 32px;
+  --circle-diameter: 32px;
+  --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
+}
+
+@media (max-width: 610px) {
+  .ui_switch {
+    --switch-width: 55px;
+    --switch-height: 24px;
+    --circle-diameter: 24px;
+  }
+}
+.ui_switch input {
+  display: none;
+}
+
+.slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background: var(--switch-bg);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider .circle {
+  top: calc(var(--circle-inset) * -1);
+  left: 0;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  position: absolute;
+  background: var(--circle-bg);
+  border-radius: inherit;
+  background-image: url(/public/img/header/light.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider .circle::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: inherit;
+  transition: all 500ms;
+  opacity: 0;
+}
+
+.ui_switch input:checked + .slider .circle {
+  left: calc(100% - var(--circle-diameter));
+  background-image: url(/public/img/header/dark.svg);
+  background-color: #3b4758;
+}
+
+.ui_switch input:active + .slider .circle::before {
+  transition: 0s;
+  opacity: 1;
+  width: 0;
+  height: 0;
+}/*# sourceMappingURL=Theme.module.css.map */

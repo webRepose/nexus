@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--color-grey1);
+  font-family: Segoe UI, Montserrat, sans-serif;
+  margin: 20px;
+  overflow-y: overlay;
+  scroll-behavior: smooth;
+  position: relative;
+  height: 90svh;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #686868;
+  border-radius: 1.17vw;
+}
+
+:root {
+  --radius6: 6px;
+  --radius10: 10px;
+  --radius12: 12px;
+  --radius15: 15px;
+  --radius17: 17px;
+  --radius20: 20px;
+  --radius25: 25px;
+  --radius50p: 50%;
+  --font24: 24px;
+  --font21: 21px;
+  --font20: 20px;
+  --font19: 19px;
+  --font18: 18px;
+  --font17: 17px;
+  --font16: 16px;
+  --font15: 15px;
+  --paddingHome: 38px 20px;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 2px;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  pointer-events: none;
+}
+
+main {
+  margin-left: 244px;
+  padding-top: 85px;
+}
+
+.main_unset {
+  margin-left: 110px;
+  left: 0px !important;
+  width: calc(100% - 110px) !important;
+}
+
+@media (max-width: 1280px) {
+  main.main_unset {
+    margin-left: 95px;
+    left: 20px !important;
+    width: calc(100% - 95px) !important;
+  }
+
+  header.main_unset {
+    margin-left: 95px;
+    left: 0px !important;
+    width: calc(100% - 135px) !important;
+  }
+
+  .main_unset__img {
+    padding: 16px 12.5px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    margin-left: 90px;
+  }
+}
+
+@media (max-width: 610px) {
+  main {
+    margin-left: 0px;
+  }
+
+  .aside_unset {
+    display: block !important;
+    width: calc(100% - 40px) !important;
+    margin-top: 70px;
+    height: 90svh !important;
+  }
+
+  .aside_unset p {
+    display: block !important;
+  }
+}

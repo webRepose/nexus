@@ -1,0 +1,58 @@
+.logo {
+  display: flex;
+  width: 100%;
+  margin-bottom: 24px;
+}
+.logo_btn {
+  width: 32px;
+  height: 32px;
+  display: block;
+  border: 1px solid #eef0f4;
+  border-radius: var(--radius6);
+  margin-right: 20px;
+}
+.logo_btn div {
+  margin: 0 auto;
+  width: 5px;
+  height: 5px;
+  background-color: #eef0f4;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+.logo_btn div:last-child {
+  margin-bottom: 0;
+}
+.logo a {
+  display: flex;
+  align-items: center;
+}
+.logo a:hover {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .logo_btn {
+    margin-right: 0;
+  }
+  .logo img {
+    display: none;
+  }
+}
+@media (max-width: 610px) {
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+  }
+  .logo_btn {
+    display: none;
+  }
+  .logo img {
+    display: block;
+    width: 100px;
+  }
+}/*# sourceMappingURL=Logo.module.css.map */
