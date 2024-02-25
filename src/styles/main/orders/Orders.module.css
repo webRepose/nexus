@@ -363,7 +363,7 @@
     display: block;
   }
 }
-@media (max-width: 411px) {
+@media (max-width: 413px) {
   .orders_tikets__orders__table {
     padding: 16px 10px;
   }
