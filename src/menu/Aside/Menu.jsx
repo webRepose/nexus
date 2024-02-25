@@ -66,6 +66,7 @@ const Menu = ({ menu }) => {
                     .querySelector("aside")
                     .classList.toggle("aside_unset");
                 }
+                document.querySelector("body").classList.toggle("flow");
               }}
               key={id}
               className={({ isActive }) => [isActive && Style.active]}
